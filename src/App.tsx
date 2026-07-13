@@ -1,0 +1,7 @@
+import { SalesPage } from './components/SalesPage';
+
+function App() {
+  return <SalesPage />;
+}
+
+export default App;
