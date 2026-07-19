@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type CSSProperties } from 'react';
+import { useState, useEffect, type CSSProperties, type FormEvent } from 'react';
 import {
   ArrowRight,
   ArrowLeftRight,
@@ -111,17 +111,17 @@ const proofCards = [
   {
     value: 'Venda em segundos',
     title: 'Fluxo real de caixa',
-    text: 'Busca por nome, codigo ou leitor, escolha de pagamento e cupom sem sair da tela principal.',
+    text: 'Busca por nome, código ou leitor, escolha de pagamento e cupom sem sair da tela principal.',
   },
   {
     value: 'Offline first',
-    title: 'Operacao sem internet',
+    title: 'Operação sem internet',
     text: 'O caixa continua vendendo localmente e sincroniza quando a conexao voltar.',
   },
   {
-    value: 'Gestao completa',
-    title: 'Controle alem do balcao',
-    text: 'Estoque, fiado, vendedores, terminais, fiscal, orcamentos, devolucoes e relatorios.',
+    value: 'Gestão completa',
+    title: 'Controle além do balcão',
+    text: 'Estoque, fiado, vendedores, terminais, fiscal, orçamentos, devoluções e relatórios.',
   },
 ];
 
@@ -360,7 +360,7 @@ const LeadForm = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', business: '' });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const msg =
       `Olá! Quero saber mais sobre o Zoltic PDV.\n\nNome: ${form.name}\nE-mail: ${form.email}\nTelefone: ${form.phone}\nNome do negócio: ${form.business}`
@@ -442,32 +442,6 @@ const LeadForm = () => {
 /* ─────────────────────────────────────────────
    ANIMATED COUNTER
    ───────────────────────────────────────────── */
-const AnimatedCounter = ({ target }: { target: number }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      observer.disconnect();
-      let start = 0;
-      const duration = 1800;
-      const step = Math.ceil(target / (duration / 16));
-      const timer = setInterval(() => {
-        start += step;
-        if (start >= target) { setCount(target); clearInterval(timer); }
-        else setCount(start);
-      }, 16);
-    }, { threshold: 0.5 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [target]);
-
-  return <span ref={ref}>{count.toLocaleString('pt-BR')}</span>;
-};
-
 /* ─────────────────────────────────────────────
    STICKY NAV (scroll-triggered)
    ───────────────────────────────────────────── */
@@ -788,7 +762,7 @@ export const SalesPage = () => {
 
         <div className="nav-actions">
           <a href="#contato" id="nav-demo" style={{ color: 'var(--ink-2)', fontWeight: 600, fontSize: '0.9rem', transition: 'color 160ms' }}>Agendar demo</a>
-          <a className="nav-cta" href="#contato" id="nav-trial">Testar grátis por 7 dias</a>
+          <a className="nav-cta" href="#contato" id="nav-trial">Testar grátis</a>
         </div>
       </header>
 
@@ -876,9 +850,9 @@ export const SalesPage = () => {
         </section>
 
         {/* ── SOCIAL PROOF BAR ─────────────────────── */}
-        <div className="waitlist-bar" role="complementary" aria-label="Lista de espera">
+        <div className="waitlist-bar" role="complementary" aria-label="Diferencial do produto">
           <p>
-            Já são <AnimatedCounter target={412} /> lojistas usando o Zoltic todos os dias.
+            <span>Venda sem parar:</span> o caixa continua funcionando mesmo quando a internet cai.
           </p>
         </div>
 
@@ -1442,8 +1416,8 @@ export const SalesPage = () => {
             </div>
 
             <div className="bling-testimonial-copy">
-              <p className="section-label section-label-light" aria-hidden="true">Depoimentos</p>
-              <h2 id="testimonials-heading">+400 lojistas podem acessar o Zoltic todos os dias</h2>
+              <p className="section-label section-label-light" aria-hidden="true">Cenários ilustrativos</p>
+              <h2 id="testimonials-heading">Veja como o Zoltic se encaixa em diferentes operações</h2>
               <p>{testimonials[activeTestimonial].quote}</p>
               <strong>{testimonials[activeTestimonial].result}</strong>
             </div>
@@ -1737,6 +1711,7 @@ export const SalesPage = () => {
           <span>Zoltic PDV</span>
         </div>
         <nav className="footer-links" aria-label="Links do rodapé">
+          <a href="/vendas">Sistema PDV Zoltic</a>
           <a href="#recursos">Recursos</a>
           <a href="#planos">Planos</a>
           <a href="#faq">FAQ</a>

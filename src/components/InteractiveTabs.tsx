@@ -57,8 +57,8 @@ export const InteractiveTabs = () => {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={`text-left p-6 transition-all duration-200 border-l-4 border-b border-b-slate-100 last:border-b-0 ${
-                    isActive 
-                      ? 'bg-slate-50 border-l-blue-600' 
+                    isActive
+                      ? 'bg-slate-50 border-l-blue-600'
                       : 'bg-white border-l-transparent hover:bg-slate-50'
                   }`}
                 >

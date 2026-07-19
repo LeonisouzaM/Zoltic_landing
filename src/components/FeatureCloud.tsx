@@ -2,12 +2,12 @@ import { motion } from 'motion/react';
 import { Check } from 'lucide-react';
 
 const FEATURES = [
-  "Frente de Caixa (PDV) Offline", "Zoltic AI (Gerente Virtual)", "Emissão NFC-e e NF-e", "Integração TEF", 
-  "Integração Balança", "Controle de Estoque e Demanda", "Curva ABC de Produtos", "Contas a Pagar e Receber", 
-  "Fluxo de Caixa", "Demonstrativo (DRE)", "Gestão de Múltiplos Caixas", "Controle de Permissões (Caixa/Gerente)", 
-  "Leitura Rápida de Códigos", "Impressão Térmica Nativa", "Controle de Fiado / Crediário", 
+  "Frente de Caixa (PDV) Offline", "Zoltic AI (Gerente Virtual)", "Emissão NFC-e e NF-e", "Integração TEF",
+  "Integração Balança", "Controle de Estoque e Demanda", "Curva ABC de Produtos", "Contas a Pagar e Receber",
+  "Fluxo de Caixa", "Demonstrativo (DRE)", "Gestão de Múltiplos Caixas", "Controle de Permissões (Caixa/Gerente)",
+  "Leitura Rápida de Códigos", "Impressão Térmica Nativa", "Controle de Fiado / Crediário",
   "Orçamentos no Salão", "Pré-vendas", "Relatórios Financeiros Consolidados",
-  "Sincronização Cloud", "Gestão de Clientes e Fornecedores", "Devoluções Simplificadas", 
+  "Sincronização Cloud", "Gestão de Clientes e Fornecedores", "Devoluções Simplificadas",
   "Descontos e Promoções", "Busca Rápida de CNPJ"
 ];
 

@@ -34,7 +34,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             className="text-lg md:text-xl text-slate-600 font-medium text-balance mb-10 max-w-xl"
           >
-            O sistema de Ponto de Venda projetado para nunca parar. Checkout em segundos, integração com balanças e TEF, emissão fiscal nativa e inteligência artificial para prever seu estoque. 
+            O sistema de Ponto de Venda projetado para nunca parar. Checkout em segundos, integração com balanças e TEF, emissão fiscal nativa e inteligência artificial para prever seu estoque.
           </motion.p>
 
           <motion.div 
@@ -63,12 +63,12 @@ export const Hero = () => {
         >
            {/* Abstract Solid PDV UI */}
            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[110%] bg-white border-4 border-slate-900 p-6 shadow-[16px_16px_0px_0px_rgba(15,23,42,1)] z-10 flex flex-col gap-6">
-              
+
               <div className="flex justify-between items-center border-b-2 border-slate-200 pb-4">
                 <div className="h-6 w-32 bg-slate-800"></div>
                 <div className="h-6 w-16 bg-emerald-500"></div>
               </div>
-              
+
               <div className="flex gap-6">
                 <div className="flex-1 flex flex-col gap-3">
                   {[1, 2, 3].map(i => (
@@ -78,7 +78,7 @@ export const Hero = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="w-1/3 bg-slate-900 p-4 flex flex-col justify-between text-white">
                   <div className="text-xs tracking-widest font-bold text-slate-400 mb-2">TOTAL DA COMPRA</div>
                   <div className="text-4xl font-black mb-6">R$ 142,50</div>
